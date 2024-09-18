@@ -1,0 +1,71 @@
+{
+    "services": [
+   {
+    "title" : "Digital Health Consulting",
+    "subDescription" : "The future of healthcare is digital, and we're here to guide you through it. Our Digital Health Consulting services help healthcare providers leverage the latest technology to improve patient care, optimize workflows, and enhance data management. From telehealth solutions to integrated Electronic Health Records (EHRs) and AI-driven analytics, we provide comprehensive support to ensure your organization remains at the forefront of digital innovation.",
+    "subs" : [
+        {
+            "title" : "Telehealth Implementation",
+            "description" : "Designing and deploying telemedicine platforms to expand access to care."
+        },
+        {
+            "title" : "EHR Optimization",
+            "description" : "Enhancing the efficiency and interoperability of EHR systems."
+        },
+        {
+            "title" : "AI & Data Analytics",
+            "description" : "Utilizing artificial intelligence to predict trends, manage resources, and improve patient outcomes."
+        },
+        {
+            "title" : "Cybersecurity",
+            "description" : "Protecting patient data and ensuring compliance with HIPAA regulations."
+        }
+
+    ]
+   },
+    {
+      "title": "Infection Control Consulting",
+      "subDescription": "In the wake of global health challenges, infection control has never been more critical. Our Infection Control Consulting services offer comprehensive strategies to prevent the spread of infections within healthcare settings. We work closely with your team to develop, implement, and monitor infection control protocols that are in line with the latest guidelines and best practices.",
+      "subs": [
+        {
+          "title": "Risk Assessment",
+          "description": "Identifying potential sources of infection and implementing preventative measures."
+        },
+        {
+          "title": "Protocol Development",
+          "description": "Creating customized infection control plans for different healthcare environments."
+        },
+        {
+          "title": "Training & Education",
+          "description": "Providing staff with the knowledge and skills to effectively manage and prevent infections."
+        },
+        {
+          "title": "Compliance Monitoring",
+          "description": "Ensuring adherence to local and international infection control standards."
+        }
+      ]
+    },
+    {
+      "title": "Quality Consulting",
+      "subDescription": "Quality is the cornerstone of exceptional healthcare. Our Quality Consulting services are designed to help healthcare organizations achieve and maintain the highest standards of care. We offer a range of services that focus on improving patient safety, enhancing service delivery, and ensuring regulatory compliance.",
+      "subs": [
+        {
+          "title": "Quality Management Systems (QMS)",
+          "description": "Developing and implementing robust QMS frameworks to improve operational efficiency."
+        },
+        {
+          "title": "Accreditation Support",
+          "description": "Guiding healthcare facilities through the process of obtaining and maintaining accreditation."
+        },
+        {
+          "title": "Performance Improvement",
+          "description": " Identifying areas for improvement and implementing evidence-based practices to enhance quality of care."
+        },
+        {
+          "title": "Patient Safety",
+          "description": "Fostering a culture of safety through proactive risk management and continuous improvement initiatives."
+        }
+      ]
+    }
+  ]
+}

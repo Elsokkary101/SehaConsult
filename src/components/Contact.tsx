@@ -5,8 +5,38 @@ import { Mail, Phone, MapPin, Send } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
+import { useState } from "react";
 
 export default function Contact() {
+  const [subject, setSubject] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+
+  async function sendEmail() {
+    try {
+      const response = await fetch("/api/sendEmail", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ subject, email, message }),
+      });
+
+      if (response.ok) {
+        alert("Email sent successfully!");
+      } else {
+        alert("Failed to send email.");
+      }
+    } catch (error) {
+      console.error("Error:", error);
+      alert("Error sending email.");
+    }
+
+    setSubject("");
+    setEmail("");
+    setMessage("");
+  }
+
   return (
     <motion.section
       id="contact"
@@ -28,9 +58,7 @@ export default function Contact() {
             transition={{ delay: 0.2, duration: 0.5 }}
             viewport={{ once: true }}
           >
-            <h3 className="text-2xl font-semibold mb-4">
-              Contact Information
-            </h3>
+            <h3 className="text-2xl font-semibold mb-4">Contact Information</h3>
             <div className="flex items-start space-x-4">
               <Mail className="w-6 h-6  mt-1" />
               <div>
@@ -62,9 +90,7 @@ export default function Contact() {
             transition={{ delay: 0.4, duration: 0.5 }}
             viewport={{ once: true }}
           >
-            <h3 className="text-2xl font-semibold  mb-4">
-              Send us a Message
-            </h3>
+            <h3 className="text-2xl font-semibold  mb-4">Send us a Message</h3>
             <Input
               placeholder="Your Name"
               className="bg-gray-50 border-gray-300 text-black"
@@ -73,16 +99,22 @@ export default function Contact() {
               type="email"
               placeholder="Your Email"
               className="bg-gray-50 border-gray-300 text-black"
+              onChange={(e) => setEmail(e.target.value)}
             />
             <Input
               placeholder="Subject"
               className="bg-gray-50 border-gray-300 text-black"
+              onChange={(e) => setSubject(e.target.value)}
             />
             <Textarea
               placeholder="Your Message"
               className="h-32 bg-gray-50 border-gray-300 text-black"
+              onChange={(e) => setMessage(e.target.value)}
             />
-            <Button className="w-full bg-gray-500 hover:bg-gray-600 transition-colors">
+            <Button
+              className="w-full bg-gray-500 hover:bg-gray-600 transition-colors"
+              onClick={sendEmail}
+            >
               <Send className="w-4 h-4 mr-2" />
               Send Message
             </Button>

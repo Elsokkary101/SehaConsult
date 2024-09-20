@@ -1,9 +1,20 @@
 "use client";
 
 import { motion } from "framer-motion";
+type SectionProps = {
+  title: string;
+  sub: string;
+  subs: Service [];
+  index: number;
+};
 
-export default function Section(props : any) {
-    const arrPara : string [] = props.subs;
+type Service = {
+  title: string;
+  description: string;
+};
+
+export default function Section(props : SectionProps) {
+    const arrPara : Service [] = props.subs;
   return (
     <motion.section
       id="services"
@@ -26,9 +37,9 @@ export default function Section(props : any) {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 justify-items-center">
-          {arrPara.map((service: any, index) => (
+          {arrPara.map((service : Service, index ) => (
             <motion.div
-              key={service}
+              key={index}
               className="bg-white p-6 rounded-lg shadow-md"
               initial={{ scale: 0.8, opacity: 0 }}
               whileInView={{ scale: 1, opacity: 1 }}

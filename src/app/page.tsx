@@ -15,7 +15,7 @@ export default function Home() {
       <Paragraph/>
       {
         services.services.map((service, index) => (
-          <Section index={index} title={service.title} sub={service.subDescription} subs={service.subs} />
+          <Section key={index} index={index} title={service.title} sub={service.subDescription} subs={service.subs} />
         ))
       }
       <WhyChoose/>
